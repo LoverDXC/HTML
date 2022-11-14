@@ -1,1 +1,217 @@
-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 01 -->
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <!-- 我们使用 标签名{
+
+    } -->
+    <style>
+        h1{
+            color:red;
+        }
+    </style>
+    <!-- 引入标签的三种方式  link兼容性更好 我们使用link不用@import-->
+    <!-- 优先级 行内>内部>外部 -->
+    <!-- <link rel="stylesheet" href="文件路径"> 外联样式-->
+    <!-- <style>
+        @import url(文件路径);
+    </style>
+     -->
+     <!-- <h1 style="color:green">111</h1> 行内样式 -->
+
+
+
+     <!-- 02 -->
+     <div>标签选择器 能够选择多个标签</div>
+     <style>
+        div{
+            color:red;
+        }
+     </style>
+     <div class="ibm kerwin">类选择器 当有多个属性时 选择距离自己最近的一个属性</div>
+     <style>
+        .ibm{
+            color: aqua;
+        }
+        .kerwin{
+            color: black;
+        }
+     </style>
+     <div id="box">
+        id选择器  id选择器具有唯一性 能够作为唯一的id进行选择
+     </div>
+     <style>
+        #box{
+            color: brown;
+        }
+     </style>
+     通配符*主要是讲界面中的界面magrin还有padding去除掉
+     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+     </style>
+
+     <div>群组选择器 主要是用来节约代码</div>
+     <style>
+        div,#box{
+            color: aliceblue;
+        }
+     </style>
+     <div><p>后代选择器 用来确定具体的标签 选择规则时从右到左 在本例中先选P标签 候选 div标签</p></div>
+     <style>
+        div p{
+            color: aqua;
+        }
+     </style>
+    <div>伪类选择器<br>
+        <a href="https://www.baidu.com/">百度</a>
+        <br>
+        a:link 这个地方设置链接的初始状态<br>
+        a:visited 访问之后<br>
+        a:hover 鼠标移入<br>
+        a:activate 鼠标点击<br>
+        顺序必须为lvha
+    </div>
+    <style>
+        div{
+            color: black;
+        }
+        a:link{
+            color:rebeccapurple;
+        }
+        a:hover{
+            color: black;
+        }
+        a:active{
+            color: blue;
+        }
+    </style>
+    <br>
+
+    <!-- 03 -->
+    伪类选择器案例<br>
+    <div>
+        <div>
+            <a href="">军事</a>
+            <a href="">财经</a>
+            <a href="">自己</a>
+            <a href="">他人</a>
+        </div>
+    </div>
+    <style>
+        div div a:link{
+            color: red;
+            background-color: red;
+        }
+        div div a:visited{
+            color: red;
+            background-color: aquamarine;
+        }
+        div div a:hover{
+            color: black;
+            background-color: blue;
+        }
+        div div a:activate{
+            color: blue;
+            background-color: aqua;
+        }
+    </style>
+    <br><br>
+
+    <!-- 04 -->
+    选择器权重<br>
+    元素选择器：0001 <br>
+    class选择器:0010 <br>
+    id选择器：0100 <br>
+    包含选择器：包含选择符的权重和 <br>
+    内联样式：1000 <br>
+    ！important：10000 <br>
+    css解析规则：不同选择符样式冲突时 高权重会覆盖低权重 <br>
+    css解析规则:权重相同选择符，哪个最后定义就选择哪个选择符样式<br>
+    <br>
+
+
+
+
+    <!-- 05 -->
+    文本属性：<br>
+    font：倾斜 加粗  字体大小/行距 字体;(倾斜和加粗可以省略 但是剩下的三个一定不能省略)<br>
+    text-transform:uppercase,lowercase,capitalize; 大写 小写 首字母大写<br>
+    letter-spacing:控制文字与文字之间的间距 <br>
+    text-decoration:none,underline,overline,line-through;<br>
+    text-indext:首行缩进 一般用em单位来进行缩进 <br>
+    line-height:行高; line-height=height 实现单行文本居中 仅适用于单行文本 <br>
+    font-size:字体大小；单位px <br>
+    font-family：多个字体中间用逗号链接 先解析第一个字体 依次往后推 <br>
+    color：三种方式 第一种 red 第二种 #fff 第三种 rgb(0,25,255){0-255} <br>
+    font-weight:数字：100-500不加粗，500-900加粗;文字 normal常规，bold加粗，bolder更粗<br>
+    font-style:italic 斜体字 oblique 倾斜的文字 normal常规 <br>
+    text-align:left 水平靠左 right 水平靠右 center水平居中 justify水平两端对齐 只对多行起作用<br>
+    <h1>实例</h1>
+
+    <div>
+        <span>
+            Lorem ipsum dolor sit amet co
+            nsectetur adipisicing elit. Nostrum laborum animi dolores, 
+            ratione magnam optio quis obcaecati voluptas veniam culpa molestias non accusamus
+            , doloremque explicabo. Magnam, est ratione. Odit, quibusdam.
+        </span>
+    </div>
+    <style>
+        div span{
+            font: italic bold 20px/1em 微软雅黑;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            text-decoration: underline;
+            line-height: 50%;
+        }
+    </style>
+
+
+    <!-- 06 -->
+    列表属性<br>
+    list-style-type：disc（实心圆），circle(空心圆),square（实心方块）,none（去掉符号）<br>
+    list-style-image:url();设置列表图片，来取代实心圆等<br>
+    list-style-position：outside 列表外面 inside 列表里面 <br>
+    list-style:none url() inside;这个顺序来进行写<br>
+
+    <!-- 07 -->
+    背景<br>
+    background-color:设置颜色;rgb(),rgba(,,,透明度),透明度取值为0-1 1为全黑<br>
+    background-image:url(),背景图片；<br>
+    background-repeat：no-repeat;repeat;repeat-x;repeat-y;<br>
+    background-position:水平位置（px left center right） 垂直位置（px top middle bottom）；数值可以为复数<br>
+    backgorund-attachment：scroll（相对于载体的父元素），fixed（固定，就是固定在浏览器的固定位置）；<br>
+    background-size: <br>
+        1.100px 100px;<br>
+        2.100% 100%;<br>
+        3.cover:会等比例放大图片，直到背景图片能够完全覆盖背景 <br>
+        4.contain：会把图像扩展到最大尺寸 使其宽度和高度完全适应内容区域 <br>
+
+    <div >
+        <div></div>
+    </div>
+    <style>
+        div div{
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+        }    
+    </style>
+
+
+</body>
+</html>
