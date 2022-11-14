@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 01 -->
+    <img src="./test.jpg" alt="当图片加载不出来时会显示此语句" title="当把鼠标移入到上面时会显示此语句" width="200px">
+    <div>如果单独设置高或者宽 他会自适应的缩放，更过通过css样式来进行设置</div><br><br>
+
+    <!-- 02 -->
+    超链接标签：实现不同页面的跳转
+    <!-- _blanl新建页面跳转 _self 当前页面进行跳转 -->
+    <a href="https://www.baidu.com/">百度</a>
+    <br> href设置的跳转页面的链接 也可以实现调用自己的界面 直接<br>
+    <a href="https://www.baidu.com/" target="_blank">百度+1</a>
+    <br><br>
+
+
+
+    <!-- 03 -->
+    table属性：<br>
+        边框线：border：控制外边框的
+        <br>width：px，百分比(相对于父元素的比例)
+        <br>height：与width相同
+        <br>bordercolor：调控边框颜色
+        <br>bgcolor：调控背景颜色
+        <br>align：left right center 水平对齐
+        <br>cellspacing 单元格之间的间距
+        <br>cellpadding 单元格内容之间的间距
+    <table border="1" align="center">
+        表格
+        <tr>
+            <td>单元格1</td>
+            <td>单元格2</td>
+        </tr>
+        <tr>
+            <td>单元格2</td>
+            <td>单元格2</td>
+        </tr>
+    </table>
+    
+    tr属性：height，width，bgolor，align <br>
+        valign：top，middle，bottom
+    <br>
+    td属性与tr属性相同<br>
+    当td修改属性时，width修改对应的是一列，height修改对应的是一行
+
+
+
+
+    <!-- 04 -->
+    单元格合并
+    rowspan 合并行，colspan 合并列
+
+    <table border="1" align="center">
+        <tr>
+            <td>不毛</td>
+            <td>魏国</td>
+            <td>江东</td>
+        </tr>
+        <tr>
+            <td>蜀国</td>
+            <td>西凉</td>
+            <td>幽州</td>
+        </tr>
+        <tr>
+            <td>南中</td>
+            <td>吴国</td>
+            <td>锦州</td>
+        </tr>
+    </table>
+    
+    <br>
+
+    <table border="1" align="center">
+        <tr>
+            <td>不毛</td>
+            <td colspan="2" align="center">魏国</td>
+            <!-- <td>江东</td> -->
+        </tr>
+        <tr>
+            <td rowspan="2">蜀国</td>
+            <td>西凉</td>
+            <td>幽州</td>
+        </tr>
+        <tr>
+            <!-- <td>南中</td> -->
+            <td>吴国</td>
+            <td>锦州</td>
+        </tr>
+    </table>
+
+    <br>
+    表格制作
+    <table border="1" align="center">
+        <tr>
+            <td>会员姓名</td>
+            <td width="50"></td>
+            <td>出生日期</td>
+            <td width="50"></td>
+            <td width="50"></td>
+        </tr>
+        <tr>
+            <td>身份证号</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>通信地址</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>联系电话</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>会员卡号</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
+    </table>
+    <br>
+    <table border="1" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+            <td>会员姓名</td>
+            <td width="50"></td>
+            <td>出生日期</td>
+            <td width="50"></td>
+        </tr>
+        <tr>
+            <td>身份证号</td>
+            <td colspan="4"></td>
+
+
+        </tr>
+        <tr>
+            <td>通信地址</td>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td>联系电话</td>
+            <td colspan="4"></td>
+        </tr>
+        <tr>
+            <td>会员卡号</td>
+            <td colspan="4"></td>
+        </tr>
+    </table>
+
+
+    <!-- 05 -->
+    form表单分为get和post两种方法
+    input方法有placeholder属性 这个相当于提前在输入框中加入文字 你输入后消失<br>
+    name属性 主要是用在向后端提交数据时 后端能够根据这个关键字找到这个属性值 属于必填属性 <br>
+    value：就相当于给按钮加上他的名字
+    <form action="get">
+        <input type="text" name="账号">
+        <input type="password" name="mima">
+        <input type="button" value="提交">
+        <input type="reset" value="重置">
+    </form>
+    <form action="post">
+        <input type="text" name="账号">
+        <input type="password" name="mima">
+        <input type="button" value="提交">
+        <input type="reset" value="重置">
+    </form>
+</body>
+</html>
