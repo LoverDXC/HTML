@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 01 -->
+    浮动<br>
+    float：left right   none;<br>
+    当你加上浮动属性之后 就相当于 他是飘起来 飘在了其他的模块上面<br>
+    之后其他的模块会 顶替他的位置 而且 都采用浮动之后 采用见缝插针的原则 <br>
+    <div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+    <style>
+        div .box1{
+            background-color: red;
+            float: left;
+            width: 100px;
+            height: 100px;
+        }
+        div .box2{
+            background-color: blue;
+            /* float: left; */
+            width: 100px;
+            height: 100px;
+        }
+        div .box3{
+            background-color: green;
+            /* float: left; */
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+<div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</div>
+<style>
+    div .box4{
+        background-color: red;
+        float: left;
+        width: 500px;
+        height: 500px;
+    }
+    div .box5{
+        background-color: blue;
+        float: left;
+        width: 300px;
+        height: 300px;
+    }
+    div .box6{
+        background-color: green;
+        float: left;
+        width: 100px;
+        height: 100px;
+       
+    }
+
+</style>
+
+
+
+    <br>
+    <!-- 02 -->
+    <div style=" overflow: hidden;">
+            清浮动: <br>
+            1.对浮动的块 写固定的高度；<br>
+            2.清浮动 clear ： none left right； 加在后面的盒子上面<br>
+            3.当前浮动元素后面补一个盒子，不设置宽高，clear：both；在不浮动的模块上面添加<br>
+            4.overflow：hidden，让浮动元素计算高度； 这个也是在浮动的元素上写 <br>
+    </div>
+    <div style="clear: left;">
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+    </div>
+    <style>
+        div{
+            height: 500px;
+            width: 500px;
+            clear: left;
+        }
+        div .box7{
+            background-color: red;
+            float: left;
+            width: 500px;
+            height: 500px;
+        }
+        div .box8{
+            background-color: blue;
+            float: left;
+            width: 300px;
+            height: 300px;
+        }
+        div .box9{
+            background-color: green;
+            /* float: left; */
+            width: 100px;
+            height: 100px;
+            clear:left;
+        }
+    </style>
+
+
+
+    <!-- 03 -->
+    盒子模型<br>
+    盒子模型就相当于 有一个快递盒子 盒子里面有一个商品<br>
+    内边距padding:相当于时盒子和商品之间的间隙<br>
+    取值： 1个值 四个方向一样；<br>
+          2个值：上下 左右；<br>
+          3个值：上 左右 下；<br>
+          4个值；上 右 下 左；<br>
+    padding特点：<br>
+    1.背景色延伸至padding;<br>
+    2.可以设置单一方向：padding-top，bottom ，left right <br>
+    
+</body>
+</html>
