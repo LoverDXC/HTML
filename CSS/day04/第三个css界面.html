@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    练习内容63 65 71 80 88
+    <!-- 01 -->
+    定位元素水平居中：<br>
+    首先移动百分之50；<br>
+    因为top：50%和left：50%是相对与父元素的宽高来进行计算的<br>
+    然后 margin-left也是根据父元素的盒子来的所以 我们移动我们子元素的一般就可以<br>
+
+
+    文字环绕效果；<br>
+    float能够实现文字环绕效果<br>
+    position会覆盖文字<br>
+
+
+     <!-- 2 -->
+     锚点：页面不同区域的跳转 使用a链接<br>
+     <a href="#box"> babab</a>
+     <div id="box">111</div>
+
+
+     <!-- 3 -->
+     精灵图<br>
+     1.将导航背景图片，按钮图片等有规则的合成一张背景，将多张图片合成一张图，然后用background position来实现背景图片定位技术<br>
+     background-position：来进行定位设计<br>
+     2.优点：通过图片整合来减少服务器的请求次数，从而提高加载速度<br>
+     通过整合图片减少图片体积<br>
+
+
+
+     <!-- 04 -->
+     宽高自适应：<br>
+     width：auto；height：auto；<br>
+     设置最小宽度：min-width：500px；<br>
+     相同的还有 max-width，min-height，max-height <br>
+     父元素不写高度时 子元素加了浮动之后父元素会发生高度塌陷<br>
+     方法1：给父元素添加overflow：hidden之后 会隐藏溢出元素<br>
+     方法2：在浮动元素下面添加空块元素，并给该元素添加生命：clear：both；height：0；overflow：hidden；会降低性能<br>
+
+     方法3：利用伪元素进行操作；<br>
+     p::after{ <br>
+        content:""; <br>
+        clear:both; <br>
+        display:block; <br>
+        height:0; <br>
+        visibility:hidden; <br>
+        overflow:hidden; <br>
+     } <br>
+
+
+
+     <!-- 05 -->
+     高度自适应：<br>
+     html,body{ <br>
+        height:100%; <br>
+     } <br>
+     两栏布局：
+     method1：
+     width：calc(100% - 200px),中间需要留空格 <br>
+     method2： <br>
+     margin-left：200px；<br>
+
+
+     <!-- 06 -->
+     单选框： <br>
+     这个地方name起着决定性作用： <br>
+     checked=“checked” 默认选中
+     <div>
+        <input type="radio" name="aaa" checked="checked"> 1 <br>
+        <input type="radio" name="aaa"> 2 <br>
+     </div>
+     根据文字来确定单选框
+     <div>
+        <input type="radio" name="bbb" id="x">
+        <label for="x">男</label>
+     </div>
+
+
+     <!-- 07 -->
+     复选框
+     <div>
+        <input type="checkbox" name="bbbb" id="1" checked="checked"> 1
+        <input type="checkbox" name="bbbb" id="2"> 2
+        <input type="checkbox" name="bbbb" id="3"> 3
+        <input type="checkbox" name="bbbb" id="4"> 4
+     </div>
+
+
+     <!-- 08 -->
+     表单功能
+     上传文件：
+     在表单里面加入disabled 能够禁用
+     <div>
+        <input type="file" name="ccc">
+        <input type="image" disabled>图片
+        <input type="hidden" value="叫爸爸"> 隐藏按钮
+        <button disabled="disabled">hhh1</button>
+     </div>
+
+
+     <!-- 09 -->
+     下拉菜单：<br>
+     size控制显示几个  multiple 多选<br>
+     value 提供给后端的数据 必须写的值；
+     <select size="2" multiple>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        <option value="">6</option>
+        <option value="">7</option>
+     </select>
+<br>
+
+     文本域<br>
+     多行文本输入框 <br>
+     placeholder 当你输入文字之后就消失；<br>
+     文本框里面提前设置好的value不会消失 <br>
+     加入resize之后不会再改变值
+     <div>
+        <textarea name="" id="y1" cols="30" rows="10" placeholder="请输入你的意见">提前设置好的value</textarea>
+     </div>
+<style>
+    #y1{
+        resize: horizontal;
+    }
+    legend{
+        border: 10px solid red;
+        color: aqua;
+        text-align: right;
+    }
+</style>
+
+
+
+
+    <!-- 10 -->
+    字段集 <br>
+    <fieldset>
+        <legend>性别</legend>
+        <input type="radio" name="bbb" id="">男
+        <input type="radio" name="bbb" id="">女
+    </fieldset>
+</body>
+</html>

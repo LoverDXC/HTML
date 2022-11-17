@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 01 -->
+    这一部分主要是讲的h5的新特性 语义化标签：
+    <header class="header_main"></header>
+    <section class="main">
+                <div ></div>
+                <article></article>
+    </section>
+    <footer class="footer_main"></footer>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .header_main{
+            width:100%;
+            height: 10%;
+            background-color: red;
+        }
+
+        .footer_main{
+            width:100%;
+            height: 10%;
+            background-color: antiquewhite;
+        }
+        .main{
+            height: 1000px;
+            width: 1000px;
+            /* background-color: green; */
+        /* }
+        div{
+            width: 50px;
+            height: 100%;
+            float: left;
+            background-color: aqua;
+        } */ */
+
+
+    </style>
+    
+
+
+    <!-- 02 -->
+    h5新增音频和视频标签<br>
+    <h1>音频</h1>
+    <audio src="文件路径" controls loop autoplay muted></audio>
+    <!-- 
+        controls 控制栏
+        loop循环
+        autoplay 自动播放
+        muted 静音
+     -->
+     <h1>视频</h1>
+     <video src="文件路径"  controls loop autoplay muted  poster="海报"></video>
+     <!-- poster：海报
+            width：设置宽度
+        height：设置高度                 -->
+
+    
+        <!-- 03 -->
+        增强表单<br>
+        <div>
+            颜色选择<br>
+            <input type="color" name="color"> 
+        </div>
+        <div>
+            邮箱输入<br>
+            <input type="email" name="color"> 
+            <input type="submit" name="" id="">
+        </div>
+        <div>
+            url地址：<br>
+            <input type="url" name="color"> 
+            <input type="submit" name="" id="">
+        </div>
+        <div>
+            滑块效果：<br>
+            <input type="range" name="range" min="100" max="200" step="10"> 
+            <input type="submit" name="" id="">
+        </div>
+        <div>
+            电话号码：<br>
+            <input type="tel" name="range"> 
+            <input type="submit" name="" id="">
+        </div>
+        <div>
+            数字类型：<br>
+            <input type="number" name="range"> 
+            <input type="submit" name="" id="">
+        </div>
+        <div>
+            搜索：<br>
+            <input type="search" name="range"> 
+            <input type="submit" name="" id="">
+        </div>
+        <div>
+            日期：<br>
+            <input type="date" name="range"> 
+            月份<input type="month" name="" id="">
+            周<input type="week" name="" id="">
+        </div>
+
+
+        <!-- 04 -->
+        选项列表：<br>
+        类淘宝搜索框：<br>
+        <input type="text" list="mylist">
+        <datalist id="mylist">
+            <option value="手机"></option>
+            <option value="手表"></option>
+            <option value="手"></option>
+        </datalist>
+
+
+        <!-- 05 -->
+        增强表单属性
+        <div>
+            <input type="email"  autofocus>
+            autofocus 自动获取焦点 一个页面只能有一个<br>
+            required 验证输入不能为空 <br>
+            multiple 可以输入多个值每个值之间用逗号分开<br>
+            pattern 将属性设为某个格式的正则表达式 如：pattern="[0-9][A-Z]{3}"<br>
+        </div>
+
+
+
+
+        <!-- 06 -->
+        css3基础：<br>
+        渐进增强：先适应底版本浏览器 再增强高版本浏览器<br>
+        优雅降级：先适应高版本浏览器 再适应低版本浏览器<br>
+        层级选择器：
+        li+li：当前元素后面第一个兄弟<br>
+        li~li：当前元素后面所有的兄弟<br>
+        属性选择器: <br>
+        完全匹配：
+        div[class]: div里面有class属性的<br>
+        div[class=box1]: div里面有class属性，且属性值为box1的<br>
+        包含匹配：
+        div[class~=box1]：只要含有属性值为box1的class属性就选中<br>
+        模糊匹配：
+        class^=b 以某个字符开头<br>
+        class$=b 以某个字符结尾<br>
+        class*=b 以包含某个字符<br>
+
+
+
+        <!-- 07 -->
+        伪类算则其：
+        x:first-child 匹配子集第一个元素 <br>
+        x：last-child 匹配子集最后一个元素 <br>
+        x:nth-child(n) 匹配索引值为n的子元素，索引值从1开始 even 2n 偶数 2n+1 odd奇数 <br>
+        x：only-child 匹配x只有一个孩子的x元素 <br>
+        x：root根元素 即HTML <br>
+        x：empty  匹配没有任何子元素的x <br>
+
+
+        <!-- 08 -->
+        目标伪类选择器
+        E:target 选择匹配的E的所有元素，且被URL相关指向
+        <a href="#box1111"> 百度</div>
+            <a href="#bbb"> 百度</div>
+        <div id="box1111">
+        </div>
+        <div id="bbb">
+        </div>
+        <style>
+            #box1111{
+                width:100px;
+                height: 100px;
+                background-color: green;
+            }
+            div:target{
+                width:100px;
+                height: 100px;
+                background-color: red;
+            }
+        </style>
+
+        <!-- 09 -->
+        E:enabled:匹配页面中所有可用状态的元素（form表单）<br>
+        E:disabled:匹配页面中所有不可用状态的元素（form表单）<br>
+        E:checked:匹配所有用户界面处于选中状态的元素（form表单）<br>
+        E:selection:匹配E元素中处于高亮状态的部分<br>
+        E:foucus:匹配当前焦点元素<br>
+
+
+        <!-- 10 -->
+        否定伪类选择器：
+        E:not(:nth-child(even)):匹配所有不匹配简单选择符s的元素E <br>
+        动态伪类选择器：
+        就是a链接的哪些<br>
+
+
+
+
+
+
+
+
+</body>
+</html>

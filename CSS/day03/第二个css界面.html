@@ -122,6 +122,88 @@
     padding特点：<br>
     1.背景色延伸至padding;<br>
     2.可以设置单一方向：padding-top，bottom ，left right <br>
-    
+    边框border：10px dotted red;相当于快递盒子<br>
+    样式：solid，double，dash，dotted；<br>
+    border-width：取值参考和padding一样<br>
+    border-color：取值与padding一样 但是采取的是颜色<br>
+    border-style：取值和padding一样 但是是样式的值<br>
+    背景色也蔓延到边框<br>
+    外边距margin：相当于盒子与盒子之间的间隙，可以设置成负数<br>
+    margin取值方式与padding完全一致<br>
+    横向居中方案 margin：0 auto；<br>
+
+    <br><br>
+    特征问题：<br>
+    1.margin兄弟问题：上下 取最大值 左右合并
+    2.父子添加margin：<br>
+    （1）子margin-top = 父padding-top，注意高度计算；
+    （2）给父盒子设置边框<br>
+    （3）加浮动<br>
+    （4）overflow：hidden <br>
+    <br><br>
+    此处有一个ps教程<br>
+    alt + 鼠标滑轮 放大缩小<br>
+    ctrl + 鼠标左键 移动<br>
+    矩形选框工具<br>
+    ctrl + c复制选框<br>
+    ctrl + n 创建新的面板<br>
+    <br><br>
+    overflow:就相当于是把文本限制在框内；<br>
+    visible：显示溢出；hidden：溢出隐藏，文本裁切；<br>
+    scroll：文本框滚动；auto：自动决定，大部分都是自动<br>
+    inherit：继承父元素；<br>
+    overflow-x:auto;overflow-y:auto;<br>
+    <br>
+    white-space:nowarp <br>
+    nowrap:不换行<br>
+    pre:显示空格回车 不换行<br>
+    pre-wrap:显示空格回车换行<br>
+    pre-line：显示回车 不显示空格换行<br>
+    text-overflow:ellipsis <br>
+    clip,剪切；ellipsis，省略换成三个点<br>
+
+
+
+
+    <!-- 04 -->
+    块元素：<br>
+    1.默认情况下，块状元素会占据一行；多个块级元素会自上而下排列；<br>
+    2.块状元素可以定义自己的宽度和高度；<br>
+    3.块元素一般作为其他元素的容器<br>
+    例如：div p ul li h1-h6 <br>
+    内联元素：<br>
+    1.横着排<br>
+    2.内联元素没有自己的形状，不能定义它的宽和高；<br>
+    3.不能放块级元素<br>
+    4.行内元素只能设置左右边距 没法设置上下边距<br>
+    例如：a b em等<br>
+    行内块元素：<br>
+    同时具有行内内联元素和块状元素的特点<br>
+    既可以调整大小 又可以和别人共享一个空间<br>
+    display:block块元素；<br>
+    inline-block行内块元素；<br>
+    inline行内元素<br>
+    练习内容63 65 71 80<br>
+    li>hover亲儿子选择器<br>
+
+
+
+
+    <!-- 05 -->
+    定位<br>
+    position：<br>
+    static 默认值 默认 <br>
+    absolute 绝对定位 脱离文档流 当没有父元素或者父元素没有定位，参照物是浏览器第一屏<br>
+    有父元素且父元素有定位的时候 参照物为父元素<br>
+    relative 相对定位 不脱离 自己的初始位置<br>
+    fixed 固定位置 脱离 浏览器的当前窗口 <br>
+    sticky 粘性定位 可以做吸顶效果 <br>
+    当设置定位之后 可以用top left right bottom来确定自己的位置<br>
+    z-index可以利用层级来确定那个位置在上面
+
+
+
+
+
 </body>
 </html>

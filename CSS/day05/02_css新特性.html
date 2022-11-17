@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 01 -->
+    文字阴影<br>
+    <style>
+        div{
+            text-shadow:-10px -10px 1px red;
+        }
+        /* 
+        支持多个阴影写法 中间用逗号分隔开
+        10px 水平唯一
+        10px 垂直唯一
+        1px 模糊程度
+        red 阴影颜色
+        */
+    </style>
+    <div>
+        hello
+    </div>
+
+    <!-- 02 -->
+    盒子阴影<br>
+    box-shadow 与text-shadow相同<br>
+     
+    <!-- 支持多个阴影写法 中间用逗号分隔开
+    10px 水平唯一
+    10px 垂直唯一
+    spread 阴影大小 取值
+    1px 模糊程度
+    red 阴影颜色 
+    inset 内阴影-->
+
+    <!-- 03 -->
+    圆角<br>
+    border-radius: <br>
+    <!--
+        取值可以是px 可以是百分比 
+        v1 四个角一样
+         v1 v2 左上右下 左下右上
+         v1 v2 v3 左上 左下右上 右下
+         v1 v2 v3 v4 顺时针
+    -->
+    再对四个角的每个角细分成水平和垂直；
+    <!-- 
+        v1 水平值/垂直值
+        v4 水平v1 v2 v3 v4/垂直v1 v2 v3 v4
+     -->
+    单独控制一个角：border-上下-左右-radius：大小；<br>
+    一半=盒子的一般（盒子=content+padding+border）
+    
+
+    实例：半圆（长为宽的两倍的长方形）扇形（正常行）
+    搜索框效果
+
+
+    <!-- 04 -->
+    设置字体<br>
+    @font-face{
+        font-family:给字体起个名字 好在后面引用；
+        src：url（字体文件）;
+    }
+    div{
+        font-family:创建的引用名字；
+    }
+
+
+
+    <!-- 05 -->
+    怪异盒模型<br>
+    普通盒模型：设置的width还有height设置的是content的宽高 之后的padding还有border是再次基础上添加<br>
+    怪异盒模型：设置的是整个盒子的宽高 content内容是 整体减去border还有padding之后的高度<br>
+
+
+
+    <!-- 06 -->
+    弹性盒：是一种布局方式 不是模型<br>
+    设置：display：flex <br>
+    影响：<br>
+    1.子元素默认横向排列<br>
+    2.行内元素，变成了块级元素<br>
+    3.只有一个元素时，margin：auto自动居中<br>
+
+    有主轴还有侧轴：比如主轴是横向 那么侧轴就是纵向 这时候盒子排列方向是横向排列；
+    设置主轴：flex-direction：column；<br>
+    column 从上到下排列；<br>
+    row；从左到右排列；<br>
+    column-reverse：从下往上排列；<br>
+    row-reverse：从右往左排列；<br>
+    调整主轴对齐方式<br>
+    justify-content：center;<br>
+    值：flex-start；以row方式为例 向左对齐
+    flex-end；以row为例 向右对齐
+    center：中间对齐
+    space-between 两端对齐<br>
+    space-around 距离环绕 每两个元素之间距离相等<br>
+    调整侧轴对齐方式<br>
+    align-items:flex-end;<br>
+    flex-start；<br>
+    flex-end；<br>
+    center；<br>
+
+    flex-warp：wrap <br>
+    折行：当一行盛不下时 会挤压原盒子的尺寸，所以我们需要对齐进行换行处理 这个就是折行<br>
+    align-content； <br>
+    折行后间距控制：<br>
+    flex-start <br>
+    flex-end <br>
+    center <br>
+    space-around <br>
+    space-between <br>
+
+
+    单独设置某个孩子<br>
+    .div{ <br>
+        align-self:flex-start;<br>
+    } <br>
+    flex-start; <br>
+    flex-end; <br>
+    center; <br>
+    baseline;与start没区别 <br>
+    scratch;是将侧轴方向完全占满 <br>
+
+
+    设置元素顺序：<br>
+    order：数值越少排序越往前<br>
+    div{<br>
+        order：-1；<br>
+    } <br>
+
+
+    .div{
+        flex=1
+    }
+    这个flex相当于是对剩余空间进行平分
+    <div class="box11">
+        <div id="box111"></div>
+        <div></div>
+        <div></div>
+    </div>
+     <style>
+        .box11{
+            width: 500px;
+            height: 500px;
+            display: flex;
+        }
+        #box111{
+            flex: 1;
+            background: #000;
+        }
+        .box11 div{
+            height: 100px;
+            width: 100px;
+            background-color: #faf;
+            border-left-color: aqua;
+        }
+
+
+
+     </style>
+
+
+</body>
+</html>
