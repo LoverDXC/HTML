@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组解构 快速从对象和数组中获取里面的成员
+        var a=[1,2,3]
+        let [x,y,z] = a
+
+        var b=10
+        var c=100
+        var [c,b]=[b,c]
+        // 多维数组解构
+        var b=[1,[2,[3]]]
+        var [q,[e,[h1]]] = b
+        
+        // 当使用结构对象时 他是用名字来解构 :后面相当于给他起别名
+        var obj = {name:'11',name1:'22',name2:'33'}
+        var {h1,name:name,h3:myname} = obj
+        console.log(name)
+
+        // 当对象的变量名字 和赋值名字一样是 可以省略赋值的变量名
+        let name1 =1
+        let name2 =1
+        var obj = {
+            name1,name2
+        }
+        // 同理
+        var obj1 = {
+            name:'1',
+            getname(){
+                console.log(this.name)
+            }
+        }
+        obj1.getname()
+
+        // 展开运算符 ...变量名
+        // 数组展开
+        var a = [1,2,3]
+        var b = [4,5,6]
+        var a_b = [...a,...b]
+        // 实参到形参参数传递
+        var test = (...arr)=>{
+            console.log(arr)
+        }
+        test(1,2,3,4,5)
+        // 实参展开
+        test(...a)
+
+        // 伪数组转换
+        // var arr = [...伪数组名]
+
+
+
+        // 对象也可以展开
+        var obj1 = {}
+        var obj2 = {}
+        var obj3 = {...obj1,...obj2}
+
+        var obj4 = {name:'1',name2:"2"}
+        var {name:age} = obj4
+        console.log(age)
+        // 对象展开没有数量限制 但是需要输入对象名字
+
+    </script>
+</body>
+</html>

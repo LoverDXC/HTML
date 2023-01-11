@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test01(name,age){
+            this.name = name
+            this.age = age
+
+            test01.prototype.say = function(){
+                console.log("我喜欢你")
+            }
+        }
+
+        class test02 extends test01{
+            constructor(name,age){
+                super(name,age)
+            }
+
+        }
+        // 这里如果不写 是直接调用函数原来的
+        // 写了就是覆盖say(){}
+        // 要是用原来的需要加super say(){super.say()}
+        var i = new test02('1',2)
+        i.say()
+    </script>
+</body>
+</html>

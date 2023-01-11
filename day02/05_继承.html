@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造函数继承 --继承属性
+        //原型继承 === 继承原型上方法
+        //组合继承 = 属性继承+方法继承
+        function name1(name,name2){
+            this.name = name
+            this.name2 = name2
+        }
+        function name3(name4,name5){
+            name1.call(this,name4,name5)
+        }
+
+        var bbb=new name3(1,2)
+        bbb.name1
+        console.log(bbb.name)
+
+
+        function fun1(){
+            fun1.prototype.say=function(){
+                console.log("i奥爸爸")
+            }
+        }
+        var i = new fun1()
+        i.say()
+        function fun2(){
+            fun2.prototype.say=function(){
+                console.log("i奥1")
+            }
+        }
+        fun2.prototype =new fun1()
+        var i = new fun2()
+        i.say()
+        // 增加基础方法
+        // 覆盖原来方法
+        // 增强
+        function fun2(){
+            fun2.prototype.say=function(){
+                console.log("i奥1")
+            }
+        }
+
+        fun2.prototype.hello = function(){
+            // 基础
+        }
+
+        fun2.prototype.say = function(){
+            // 覆盖
+        }
+
+        fun2.prototype.say2 =function(){
+            this.say()
+            // 增强
+        }
+
+    </script>
+</body>
+</html>

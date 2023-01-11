@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bb">
+        <h1>
+
+        </h1>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul></ul>
+    </div>
+    <div>
+        <h1>
+            <ul></ul>
+            <ul></ul>
+        </h1>
+    </div>
+    <a href="https://www.cnblogs.com/haoqirui/p/10550007.html">获取节点方法</a>
+    <div>原型链</div>
+    <img src="./QQ截图20230111111121.png" alt="" width="500px" height="500px">
+    <script>
+        var data1 = {
+            title:"综艺",
+            list:['1','2','3']
+        }
+        function CreateList(select,data){
+            this.ele = document.querySelector(select)
+            console.log(this.ele)
+            this.data = data.title
+            this.list = data.list
+
+            this.render = function(){
+                var h1 = this.ele.querySelector("h1")
+                var ul = this.ele.querySelector("ul")
+
+                h1.innerHTML = this.title
+                ul.innerHTML = this.list.map(item=>`<li>${item}<li>`).join("")
+            }
+        }
+
+        var obj1 = new CreateList(".bb",data1)
+        obj1.render()
+
+        // 为什么要使用原型 当使用new创建时 创建的函数没法复用会导致内存使用增加
+        function CreateList(select,data){
+            this.ele = document.querySelector(select)
+            console.log(this.ele)
+            this.data = data.title
+            this.list = data.list
+
+            CreateList.prototype.render = function(){
+                var h1 = this.ele.querySelector("h1")
+                var ul = this.ele.querySelector("ul")
+
+                h1.innerHTML = this.title
+                ul.innerHTML = this.list.map(item=>`<li>${item}<li>`).join("")
+            }
+        }
+        var obj1 = CreateList(".bb",data1)
+        console.log(obj1)
+        // obj1.__proto__ === CreateList.prototype()
+        // 扩展 obj1.toString()
+
+        // 当给原型函数赋值时不会改变原来的值 除非直接使用类名.prototype.方法=function()来修改
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.首字母大写
+        function CreateObj(name){
+                this.name = name
+        }
+        // 2.构造函数不写return 写了之后没有用
+        function CreateObj(name){
+                this.name = name
+                return '1111'//这个return 没有用
+        }
+        // 3.构造函数不能当普通函数来用 会出现undefinded
+        function CreateObj(name){
+                this.name = name
+                this.cook = function(){
+                    console.log(this.name)
+                }
+        }
+        var obj = CreateObj("kerwin")
+        console.log(obj,window.name)
+        // 此时会出现相当于 this指向的是window 然后调用obj时出现undefinded
+        // 4.this指向
+        function CreateObj(name){
+                this.name = name
+                console.log(this.name)
+        }
+        // var obj1 = new CreateObj("kerwin")
+        new CreateObj("kerwin")
+        // new CreateObj("kerwin") 这个过程相当于在堆区创建完成
+        // new是实例化过程 对象已经生成
+        // var obj = 就相当于在堆和栈之间建立联系
+    </script>
+</body>
+</html>

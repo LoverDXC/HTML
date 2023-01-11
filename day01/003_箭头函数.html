@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var test = function(){
+            console.log("11111")
+        }
+
+        var test1 = ()=>{
+            console.log("aaa")
+        }
+        // 箭头函数 只有一个形参时 ()可以省略
+        var test = a =>{
+            console.log(a)
+        }
+        test("1123")
+        // 箭头函数 当只有一个返回值时{}和return可以省略
+        // 其他都没有问题 但是当返回对象时需要在对象的大括号外面加上()
+        var test = a=> a+1
+        // 箭头函数没有arguements
+        var hello = function(){
+            console.log(arguments[0],arguments[2])
+        }
+        hello(12,3,4)
+        // 箭头函数this的作用域是父级作用域
+
+
+        // es6新增了默认参数
+        var test = (a=1,b=2)=>{
+            console.log(a,b)
+        }
+        test()
+    </script>
+</body>
+</html>

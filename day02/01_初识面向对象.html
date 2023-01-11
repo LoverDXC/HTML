@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 字面量创建方法:
+        var obj = {
+            name:'kerwin',
+            age:10
+        }
+        // 内置函数方法：
+        var obj = new Object()
+        obj.name = "baba"
+        // 工厂函数
+        function createObj(name1){
+            var obj = {}
+            obj.name = name
+        }
+        // 自动对象
+        function createobj(name){
+            this.name = name
+            this.fun = function(){
+                console.log(this.name)
+            }
+        }
+        var obj = new createobj("爸爸")
+        obj.fun()
+    </script>
+</body>
+</html>

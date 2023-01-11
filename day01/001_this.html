@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id = "box"> bbbb</div>
+<body>
+    <script>
+        // this 指针 谁调用 他就是谁
+        var hello = function(){
+            console.log(this)
+        }
+        hello()
+        // 对象
+        var b = {
+            name:function(){console.log(this['baba'])},
+            'baba':'bbbb'
+        }
+        b.name()
+        // 元素节点
+        box.addEventListener('click',function(){
+            console.log("111",this)
+        })
+        // 改变this指向的方法
+        // call方法  改变this为执行函数的第一个参数 支持多个参数
+        b.name.call(hello)
+        var  obj1 = {
+            name:function(){console.log(this.hello)},
+            hello:"obj1"
+        }
+        var  obj2 = {
+            name:function(){console.log(this.hello)},
+            hello:"obj2"
+        }
+        obj1.name.call(obj2)
+        // apply方法  改变this为执行函数的第一个参数 只支持一个数组参数
+        obj2.name.apply(obj1)
+        // bind 改变this为执行函数的第一个参数 不会自动执行函数
+        var fun = obj2.name.bind(obj1)
+        console.log(fun)
+
+    </script>
+</body>
+</html>
